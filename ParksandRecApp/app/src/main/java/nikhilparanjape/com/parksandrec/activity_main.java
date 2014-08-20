@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.TextView;
+import android.graphics.Color;
 import android.view.MenuItem;
+import nikhilparanjape.com.parksandrec.CheckNetwork;
 
 
 public class activity_main extends Activity {
@@ -15,6 +18,17 @@ public class activity_main extends Activity {
         setContentView(R.layout.activity_main);
         ActionBar bar = getActionBar();
         bar.setTitle("Parks and Rec");
+
+        try{
+            if(!CheckNetwork.isInternetAvailable(activity_main.this)){
+                TextView t = (TextView)findViewById(R.id.alertDisplay);
+                t.setTextColor(Color.RED);
+                t.setText("Alert! No Internet Connection!");
+            }
+        }catch(Exception e){
+            TextView t = (TextView)findViewById(R.id.alertDisplay);
+            t.setText("Error");
+        }
     }
 
 

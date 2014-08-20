@@ -9,8 +9,22 @@
     tools:context=".activity_main">
 
     <TextView
-        android:text="@string/hello_world"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Information"
+        android:id="@+id/alertDisplay"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedules"
+        android:id="@+id/scheduleBt"
+        android:layout_marginTop="95dp"
+        android:background="@drawable/applabels"
+        android:clickable="true"
+        android:layout_below="@+id/alertDisplay"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
